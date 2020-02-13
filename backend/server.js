@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT ;
 
 app.use(cors());
 app.use(express.json());
@@ -21,10 +21,10 @@ MongoClient.connect(uri, {useNewUrlParser:true,useUnifiedTopology: true},(err, c
    }
    console.log('MongoDB database connection established successfully...');
    
-   client.close();
+   //client.close();
 });
 
-const exerciseRouter=require('./routes/exercise');
+const exerciseRouter=require('./routes/exercises');
 const userRouter=require('./routes/users');
 
 app.use('/exercises',exerciseRouter);

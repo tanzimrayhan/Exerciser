@@ -9,12 +9,17 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
     const username = req.body.username;
-
+    console.log(req.body);
+    console.log(username); 
     const newUser = new User({ username });
-
+    console.log(newUser);
     newUser.save()
-        .then(() => res.json('User added successfully.'))
-        .catch((err)=>res.status(400).json('Error: '+err));
+        .then(() => {
+             return res.status(200).send("Saved")
+            })
+        .catch((err)=>{
+            console.log("Hello from the error scope")
+             return res.status(400).send.json('Error: '+err)});
 
 
 })
