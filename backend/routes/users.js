@@ -9,20 +9,18 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
     const username = req.body.username;
-    console.log(req.body);
-    console.log(username); 
+    
     const newUser = new User({ username });
     console.log(newUser);
     User.create(newUser)
         .then(() => {
-            console.log("Hello from THEN Scope")
-             return res.status(200).send({message:"Saved"})
-            })
-        .catch((err)=>{
-            console.log("Hello from the error scope")
-             return res.status(400).send.json('Error: '+err)});
+            return res.status(200).send({ message: "Saved" })
+        })
+        .catch((err) => {
+            return res.status(400).send.json('Error: ' + err)
+        });
 
 
 })
 
-module.exports=router;
+module.exports = router;
