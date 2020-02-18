@@ -16,9 +16,7 @@ function App() {
       <Route path="/create" exact component={CreateExercise} />
       <Route path="/user" exact component={CreateUser} /> */}
       <div className="App">
-        <header className="App-header">
-          Hello World!
-      </header>
+        <header className="App-header">Hello World!</header>
       </div>
     </Router>
   );
