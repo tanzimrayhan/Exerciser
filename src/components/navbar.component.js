@@ -11,7 +11,9 @@ class Navigation extends Component {
 
             <header className="hamburger" >
 
-            <Navbar bg="light" expand="lg">
+            
+            <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+        <Link to="/" className="navbar-brand">ExcerTracker</Link>
 
                 <Nav className="mr-auto">
                     <Nav.Link ><Link to="/" style={{ color: "grey" }}>Home </Link></Nav.Link>
@@ -21,9 +23,9 @@ class Navigation extends Component {
 
                 </Nav>
 
+            </nav>
 
-
-            </Navbar>
+            
             </header>
 
 
