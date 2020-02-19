@@ -14,7 +14,7 @@ import CreateUser from './components/create-user.component'
 function App() {
   return (
     <Router  >
-      <div className="container"  style={{backgroundColor:"#1f1c47"}} >
+      <div className="container"   >
       <Navigation />
       
       {/* <br /> */}
