@@ -6,8 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class CreateUser extends Component {
     render() {
         return (
-            <div>
+            <div className="App" style={{ height: '100%' }}>
+                <header className="App-header" >
                 You are on CreateUser list page!
+                </header>
             </div>
         )
     }

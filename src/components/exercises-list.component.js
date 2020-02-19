@@ -6,8 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 class ExercisesList extends Component {
     render() {
         return (
-            <div>
+            <div className="App" style={{ height: '100%' }}>
+                <header className="App-header" >
                 You are on exercise list page!
+                </header>
             </div>
         )
     }

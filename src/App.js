@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 //Components
-import Navbar from './components/navbar.component';
+import Navigation from './components/navbar.component';
 import ExercisesList from './components/exercises-list.component';
 import EditExercise from './components/create-exercises.component';
 import  CreateExercise from './components/create-exercises.component';
@@ -14,7 +14,7 @@ import CreateUser from './components/create-user.component'
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navigation />
       {/* <br /> */}
       <Route path="/" exact component={ExercisesList} />
       <Route path="/edit/:id" component={EditExercise} />
