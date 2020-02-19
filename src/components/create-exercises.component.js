@@ -56,17 +56,33 @@ class CreateExercise extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const exercise = {
-            username: this.state.username,
-            description: this.state.description,
-            duration: this.state.duration,
-            date: this.state.date
+        var exercise;
+        try {
+             exercise = {
+                username: this.state.username,
+                description: this.state.description,
+                duration: this.state.duration,
+                date: this.state.date
+            }
+
+            
+    
+        } catch (error) {
+            console.log( error);
+        }
+        finally{
+            
+            window.location='/';
+            
+            
         }
 
-        console.log(exercise);
-
-        // window.location = '/';
+        console.log("Added a new exercise");
+            console.log(exercise);
+    
     }
+        
+    
 
     render() {
         return (
@@ -97,8 +113,9 @@ class CreateExercise extends Component {
                                 </select>
 
                             </div>
+                            <br/>
                             <div className="from-group">
-                                <label>Description: </label>
+                                <label>Description :     </label>
                                 <input type="text" required className="from-control" value={this.state.description} onChange={this.onChangeDescription} />
 
                             </div>
