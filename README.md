@@ -1,3 +1,6 @@
+A simple app in which the user can note down all the exercises to keep track of their health and maintain a balanced life.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
