@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from 'axios';
 
 
 class CreateUser extends Component {
@@ -22,13 +23,18 @@ class CreateUser extends Component {
         })
     }
     
-    onSubmit = (e,err) => {
+    onSubmit = (e) => {
         e.preventDefault();
         const user = {
             username: this.state.username,
         }
 
         console.log(user);
+
+        axios.post('http://localhost:9000/users/add',user).then(res=>{
+            console.log(res);
+            console.log(res.data);
+        })
         this.setState({
             username:''
         }

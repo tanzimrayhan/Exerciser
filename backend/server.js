@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT ;
+const port = process.env.PORT||9000 ;
 
 app.use(cors());
 app.use(express.json());
@@ -18,7 +18,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.connect(uri, {useNewUrlParser:true,useUnifiedTopology: true},(err, client)=> {
    if(err) {
         console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
-   }
+   } 
    console.log('MongoDB database connection established successfully...');
    
    //client.close();
