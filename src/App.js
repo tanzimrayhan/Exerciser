@@ -6,7 +6,7 @@ import './App.css';
 //Components
 import Navigation from './components/navbar.component';
 import ExercisesList from './components/exercises-list.component';
-import EditExercise from './components/create-exercises.component';
+import EditExercise from './components/edit-exercises.component';
 import  CreateExercise from './components/create-exercises.component';
 import CreateUser from './components/create-user.component'
 
