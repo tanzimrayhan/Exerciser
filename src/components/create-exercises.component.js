@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
+import axios from 'axios';
 //import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -65,6 +66,10 @@ class CreateExercise extends Component {
                 date: this.state.date
             }
 
+            axios.post('http://localhost:5000/exercise/add',exercise)
+                .then((res)=>{
+                    console.log(res.data);
+                })
             
     
         } catch (error) {
