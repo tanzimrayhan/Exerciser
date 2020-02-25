@@ -25,10 +25,15 @@ class CreateExercise extends Component {
 
 
     componentDidMount ()  {
-        this.setState({
-            users: ['test user'],
-            username: 'test user'
-        })
+        axios.get('http://localhost:5000/users/')
+            .then(response=>{
+                if(response.data.length>0){
+                    this.setState({
+                        users:response.data.map(user=>user.username),
+                        username:response.data[0].username
+                    })
+                }
+            })
     }
 
     onChangeUsername = (e) => {
@@ -55,37 +60,23 @@ class CreateExercise extends Component {
         })
     }
 
-    onSubmit = (e) => {
+    onSubmit(e) {
         e.preventDefault();
-        var exercise;
-        try {
-             exercise = {
-                username: this.state.username,
-                description: this.state.description,
-                duration: this.state.duration,
-                date: this.state.date
-            }
-
-            axios.post('http://localhost:5000/exercise/add',exercise)
-                .then((res)=>{
-                    console.log(res.data);
-                })
-            
     
-        } catch (error) {
-            console.log( error);
+        const exercise = {
+          username: this.state.username,
+          description: this.state.description,
+          duration: this.state.duration,
+          date: this.state.date
         }
-        finally{
-            
-            window.location='/';
-            
-            
-        }
-
-        console.log("Added a new exercise");
-            console.log(exercise);
     
-    }
+        console.log(exercise);
+    
+        axios.post('http://localhost:5000/exercises/add', exercise)
+          .then(res => console.log(res.data));
+    
+        //window.location = '/';
+      }
         
     
 
