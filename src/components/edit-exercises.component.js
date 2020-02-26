@@ -36,7 +36,7 @@ export default class EditExercise extends Component {
         console.log(error);
       })
 
-    axios.get('https://exercizer.herokuapp.com/')
+    axios.get('https://exercizer.herokuapp.com/users/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({

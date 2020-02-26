@@ -34,11 +34,14 @@ class CreateUser extends Component {
         axios.post('https://exercizer.herokuapp.com/users/add',user).then(res=>{
             console.log(res);
             console.log(res.data);
+            window.location = '/';
         })
         this.setState({
             username:''
         }
         )
+
+        window.location = '/';
     }
 
     render() {
