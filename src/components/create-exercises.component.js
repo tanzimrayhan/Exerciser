@@ -75,7 +75,7 @@ class CreateExercise extends Component {
         axios.post('https://exercizer.herokuapp.com/exercises/add', exercise)
           .then(res => console.log(res.data));
     
-        window.location = '/';
+        //window.location = '/';
       }
         
     
