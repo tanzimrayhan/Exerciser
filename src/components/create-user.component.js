@@ -26,8 +26,9 @@ class CreateUser extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         const user = {
-            username: this.state.username,
+            username: this.state.username.trim(),
         }
+        
 
         console.log(user);
 
@@ -41,7 +42,7 @@ class CreateUser extends Component {
         }
         )
 
-        window.location = '/';
+        //window.location = '/';
     }
 
     render() {
