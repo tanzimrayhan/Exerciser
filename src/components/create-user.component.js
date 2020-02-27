@@ -35,6 +35,7 @@ class CreateUser extends Component {
         axios.post('https://exercizer.herokuapp.com/users/add',user).then(res=>{
             console.log(res);
             console.log(res.data);
+            alert(user.username+" is added");
             window.location = '/';
         })
         this.setState({
